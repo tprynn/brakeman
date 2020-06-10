@@ -14,19 +14,6 @@ class BrakemanTests < Minitest::Test
     end
   end
 
-  def test_app_tree_root_is_absolute
-    require 'brakeman/options'
-    relative_path = Pathname.new(File.dirname(__FILE__)).relative_path_from(Pathname.getwd)
-    absolute_path = relative_path.realpath.to_s
-    input = ["-p", relative_path.to_s]
-    options, _ = Brakeman::Options.parse input
-    at = Brakeman::AppTree.from_options options
-
-    assert !options[:app_path].start_with?("/")
-    assert_equal absolute_path, at.root
-    assert_equal File.join(absolute_path, "Gemfile"), at.expand_path("Gemfile")
-  end
-
   def test_app_tree_flexible_file_paths
     require 'brakeman/options'
     relative_path = File.expand_path(File.join(TEST_PATH, "/apps/rails4_non_standard_structure/"))

@@ -16,6 +16,7 @@ require 'brakeman'
 require 'brakeman/scanner'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class Minitest::Test
   def assert_nothing_raised *args

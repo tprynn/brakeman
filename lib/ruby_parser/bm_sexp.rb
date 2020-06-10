@@ -24,26 +24,36 @@ class Sexp
 
   #Create clone of Sexp and nested Sexps but not their non-Sexp contents.
   #If a line number is provided, also sets line/original_line on all Sexps.
-  def deep_clone line = nil
+  def deep_clone line_number = nil
     s = Sexp.new
 
     self.each do |e|
       if e.is_a? Sexp
-        s << e.deep_clone(line)
+        s << e.deep_clone(line_number)
       else
         s << e
       end
     end
 
-    if line
+    if line_number
       s.original_line = self.original_line || self.line
-      s.line(line)
+      s.line(line_number)
     else
       s.original_line = self.original_line
       s.line(self.line)
     end
 
     s
+  end
+
+  def line n = UNASSIGNED
+    if n != nil && n != UNASSIGNED then
+      raise ArgumentError, "setting %p.line %p" % [self, n] unless Integer === n
+      @line = n
+      self
+    else
+      @line ||= nil
+    end
   end
 
   def paren

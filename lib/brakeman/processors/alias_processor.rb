@@ -913,14 +913,14 @@ class Brakeman::AliasProcessor < Brakeman::SexpProcessor
     if include_request_vars
       lenv.all.each do |k, v|
         #TODO Why would this have nil values?
-        if (k.node_type == :ivar or request_value? k) and not v.nil?
+        if k && (k.node_type == :ivar or request_value? k) and not v.nil?
           res[k] = v.dup
         end
       end
     else
       lenv.all.each do |k, v|
         #TODO Why would this have nil values?
-        if k.node_type == :ivar and not v.nil?
+        if k && (k.node_type == :ivar and not v.nil?)
           res[k] = v.dup
         end
       end

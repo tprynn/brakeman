@@ -8,6 +8,7 @@ class Brakeman::Rescanner < Brakeman::Scanner
   KNOWN_TEMPLATE_EXTENSIONS = Brakeman::TemplateParser::KNOWN_TEMPLATE_EXTENSIONS
   SCAN_ORDER = [:config, :gemfile, :initializer, :lib, :routes, :template,
     :model, :controller]
+  attr_reader :changes
 
   #Create new Rescanner to scan changed files
   def initialize options, processor, changed_files
