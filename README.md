@@ -1,28 +1,16 @@
-[![Brakeman Logo](http://brakemanscanner.org/images/logo_medium.png)](http://brakemanscanner.org/)
-[![Brakeman Pro Logo](https://brakemanpro.com/images/bmp_square_white.png)](https://brakemanpro.com)
 
-[![Build Status](https://travis-ci.org/presidentbeef/brakeman.svg?branch=master)](https://travis-ci.org/presidentbeef/brakeman)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1b08a5c74695cb0d11ec/maintainability)](https://codeclimate.com/github/presidentbeef/brakeman/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1b08a5c74695cb0d11ec/test_coverage)](https://codeclimate.com/github/presidentbeef/brakeman/test_coverage)
-[![Gitter](https://badges.gitter.im/presidentbeef/brakeman.svg)](https://gitter.im/presidentbeef/brakeman)
+[Brakeman](https://github.com/presidentbeef/brakeman) changed their license to a non-free license in 2018/2019. This is a clone of the last MIT-licensed commit of the upstream Brakeman repo.
+
+I have not read any Brakeman source code/commits in the upstream repo and any contributors to this repo will need to assert the same.
 
 # Brakeman
 
 Brakeman is an open source static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
 
-Check out [Brakeman Pro](https://brakemanpro.com/) if you are looking for a commercially-supported version with a GUI and advanced features.
 
 # Installation
 
-Using RubyGems:
-
-    gem install brakeman
-
-Using Bundler:
-
-    group :development do
-      gem 'brakeman', :require => false
-    end
+Do not install via rubygems, as the installed version is not freely licensed.
 
 # Usage
 
@@ -134,37 +122,6 @@ Options passed in on the commandline have priority over configuration files.
 The default config locations are `./config/brakeman.yml`, `~/.brakeman/config.yml`, and `/etc/brakeman/config.yml`
 
 The `-c` option can be used to specify a configuration file to use.
-
-# Continuous Integration
-
-There is a [plugin available](http://brakemanscanner.org/docs/jenkins/) for Jenkins/Hudson.
-
-For even more continuous testing, try the [Guard plugin](https://github.com/guard/guard-brakeman).
-
-# Building
-
-    git clone git://github.com/presidentbeef/brakeman.git
-    cd brakeman
-    gem build brakeman.gemspec
-    gem install brakeman*.gem
-
-# Who is Using Brakeman?
-
-* [Code Climate](https://codeclimate.com/)
-* [GitHub](https://github.com/)
-* [Groupon](http://www.groupon.com/)
-* [New Relic](http://newrelic.com)
-* [Twitter](https://twitter.com/)
-
-[..and more!](http://brakemanscanner.org/brakeman_users)
-
-# Homepage/News
-
-Website: http://brakemanscanner.org/
-
-Twitter: https://twitter.com/brakeman
-
-Chat: https://gitter.im/presidentbeef/brakeman
 
 # License
 
